@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://jiayeleng.github.io/</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/data/LJY_CV.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/paper/ProInterAR.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/paper/Efficient_Flower_Text_Entry_in_Virtual_Reality.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/paper/Light-Occlusion%20Text%20Entry%20in%20Mixed%20Reality.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/paper/ProObjAR.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jiayeleng.github.io/paper/Bidirectional_Shadow_Rendering_for_Interactive_Mixed_360_Videos.pdf</loc>
+  <lastmod>2024-05-02T09:19:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
