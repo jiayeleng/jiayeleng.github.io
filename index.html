@@ -21,14 +21,33 @@
       
       /* 增加表格单元格中的字体大小 */
       td {
-        font-size: 16px; /* 你可以根据需求调整大小 */
+        font-size: 17px; /* 你可以根据需求调整大小 */
       }
 
       h2 {
         font-size: 20px;
       }
     
-      /* 保持标题字体不变 */
+      /* 初始只显示部分内容 */
+      .news-content {
+        max-height: 90px;  /* 设置初始显示的高度 */
+        overflow: hidden;   /* 超出部分隐藏 */
+        transition: max-height 0.5s ease; /* 增加过渡效果 */
+      }
+
+      /* 当用户点击时显示全部内容 */
+      .news-content.expanded {
+        max-height: 1000px; /* 设置一个足够大的高度以显示全部内容 */
+      }
+
+      /* 样式化 read more 按钮 */
+      .read-more-btn {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+        margin-top: 10px;
+        display: inline-block;
+      }
       
     </style>
   </head>
@@ -63,6 +82,56 @@
               </td>
             </tr>
           </tbody></table>
+          
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:-20px;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <h2><b>News</b></h2>
+                  <hr>
+          
+                  <!-- 包裹新闻内容的容器，初始只显示一部分 -->
+                  <div class="news-content" id="news-content">
+                    <table style="width:100%;border:0px;border-spacing:0px;">
+                      <tr>
+                        <td style="width:15%;font-weight: bold;">[2024-09]</td>
+                        <td>Received Research Tuition Scholarship.</td>
+                      </tr>
+                      <tr>
+                        <td style="width:15%;font-weight: bold;">[2024-05]</td>
+                        <td>Flied to Hawaii to attend CHI 2024.</td>
+                      </tr>
+                      <tr>
+                        <td style="width:15%;font-weight: bold;">[2024-03]</td>
+                        <td>Our paper <em>ProInterAR</em> was accepted by CHI 2024.</td>
+                      </tr>
+                    </table>
+                  </div>
+          
+                  <!-- Read More 按钮 -->
+                  <span class="read-more-btn" id="read-more-btn" onclick="toggleNews()">Read more</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <br>
+
+          <script>
+            function toggleNews() {
+              var content = document.getElementById("news-content");
+              var btn = document.getElementById("read-more-btn");
+          
+              // 切换内容的展开和收起状态
+              if (content.classList.contains("expanded")) {
+                content.classList.remove("expanded");
+                btn.textContent = "Read more";  // 切换按钮文本为 "Read more"
+              } else {
+                content.classList.add("expanded");
+                btn.textContent = "Read less";  // 切换按钮文本为 "Read less"
+              }
+            }
+          </script>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:-20px;"><tbody>
             <tr>
@@ -73,145 +142,144 @@
             </tr>
           </tbody></table>
 
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:-10px;"><tbody>
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle;">
-        <div class="one" style="width:110%; height:auto;">
-          <img src='images/ProInterAR.jpg' style="width:100%; height:auto;">
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
-        <a href="https://dl.acm.org/doi/10.1145/3613904.3642527">
-          <span class="papertitle" style="font-size: 17px; text-decoration: underline;">ProInterAR: A Visual Programming Platform for Creating Immersive AR Interactions</span>
-        </a>
-        <br>
-    <a href="https://huiye19.github.io/">Hui Ye*</a>,
-    <strong style="font-size: 17px;">Jiaye Leng*</strong>,
-    <a href="https://pengfeixu.com/">Pengfei Xu</a>,
-    <a href="https://www.dgp.toronto.edu/~karan/">Karan Singh</a>,
-    <a href="https://hongbofu.people.ust.hk/">Hongbo Fu</a>
-    <br style="font-size: 17px;">(* equally contributed)
-        <br>
-        <em>In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems <b style="color: red;">(CHI 2024)</b></em>
-        <br>
-        <a href="paper/ProInterAR.pdf">[paper]</a>
-        |
-        <a href="https://www.youtube.com/watch?v=C5CI62CcnRs">[video]</a>
-      </td>
-    </tr>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;margin-bottom:-10px;"><tbody>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle;">
+                <div class="one" style="width:110%; height:auto;">
+                  <img src='images/ProInterAR.jpg' style="width:100%; height:auto;">
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
+                <a href="https://dl.acm.org/doi/10.1145/3613904.3642527">
+                  <span class="papertitle" style="font-size: 17px; text-decoration: underline;">ProInterAR: A Visual Programming Platform for Creating Immersive AR Interactions</span>
+                </a>
+                <br>
+            <a href="https://huiye19.github.io/">Hui Ye*</a>,
+            <strong style="font-size: 17px;">Jiaye Leng*</strong>,
+            <a href="https://pengfeixu.com/">Pengfei Xu</a>,
+            <a href="https://www.dgp.toronto.edu/~karan/">Karan Singh</a>,
+            <a href="https://hongbofu.people.ust.hk/">Hongbo Fu</a>
+            <br style="font-size: 17px;">(* equally contributed)
+                <br>
+                <em>In Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems <b style="color: red;">(CHI 2024)</b></em>
+                <br>
+                <a href="paper/ProInterAR.pdf">[paper]</a>
+                |
+                <a href="https://www.youtube.com/watch?v=C5CI62CcnRs">[video]</a>
+              </td>
+            </tr>
 
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one" style="width:110%; height:auto;">
-          <img src='images/Light-Occlusion.jpeg' width=100%>
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
-        <a href="https://doi.org/10.1080/10447318.2023.2285646">
-          <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Light-Occlusion Text Entry in Mixed Reality</span>
-        </a>
-        <br>
-    Aoxin Sun,
-    <a href="https://liliwang.net/">Lili Wang</a>,
-    <strong style="font-size: 17px;">Jiaye Leng</strong>,
-    Sio Kei Im
-        <br>
-        <em>In International Journal of Human-Computer Interaction <b style="color: red;">(IJHCI 2023)</b></em>
-        <br>
-        <a href="paper/Light-Occlusion Text Entry in Mixed Reality.pdf">[paper]</a>
-        |
-        <a href="https://www.bilibili.com/video/BV1QK4y1B7LV/?vd_source=a17f0282b4b9fcc7f3e95becc47e4790">[video]</a>
-      </td>
-    </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one" style="width:110%; height:auto;">
+                  <img src='images/Light-Occlusion.jpeg' width=100%>
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
+                <a href="https://doi.org/10.1080/10447318.2023.2285646">
+                  <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Light-Occlusion Text Entry in Mixed Reality</span>
+                </a>
+                <br>
+            Aoxin Sun,
+            <a href="https://liliwang.net/">Lili Wang</a>,
+            <strong style="font-size: 17px;">Jiaye Leng</strong>,
+            Sio Kei Im
+                <br>
+                <em>In International Journal of Human-Computer Interaction <b style="color: red;">(IJHCI 2023)</b></em>
+                <br>
+                <a href="paper/Light-Occlusion Text Entry in Mixed Reality.pdf">[paper]</a>
+                |
+                <a href="https://www.bilibili.com/video/BV1QK4y1B7LV/?vd_source=a17f0282b4b9fcc7f3e95becc47e4790">[video]</a>
+              </td>
+            </tr>
 
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one" style="width:110%; height:auto;">
-          <img src='images/ProObjAR.jpeg' width=100%>
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
-        <a href="https://doi.org/10.1145/3544548.3580750">
-          <span class="papertitle" style="font-size: 17px; text-decoration: underline;">ProObjAR: Prototyping Spatially-aware Interactions of Smart Objects with AR-HMD</span>
-        </a>
-        <br>
-    <a href="https://huiye19.github.io/">Hui Ye</a>,
-    <strong style="font-size: 17px;">Jiaye Leng</strong>,
-    <a href="https://chufengxiao.github.io/">Chufeng Xiao</a>,
-    <a href="https://liliwang.net/">Lili Wang</a>,
-    <a href="https://hongbofu.people.ust.hk/">Hongbo Fu</a>
-        <br>
-        <em>In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems <b style="color: red;">(CHI 2023)</b></em>
-        <br>
-        <a href="paper/ProObjAR.pdf">[paper]</a>
-        |
-        <a href="https://www.youtube.com/watch?v=YnkOdbIkooc">[video]</a>
-      </td>
-    </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one" style="width:110%; height:auto;">
+                  <img src='images/ProObjAR.jpeg' width=100%>
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
+                <a href="https://doi.org/10.1145/3544548.3580750">
+                  <span class="papertitle" style="font-size: 17px; text-decoration: underline;">ProObjAR: Prototyping Spatially-aware Interactions of Smart Objects with AR-HMD</span>
+                </a>
+                <br>
+            <a href="https://huiye19.github.io/">Hui Ye</a>,
+            <strong style="font-size: 17px;">Jiaye Leng</strong>,
+            <a href="https://chufengxiao.github.io/">Chufeng Xiao</a>,
+            <a href="https://liliwang.net/">Lili Wang</a>,
+            <a href="https://hongbofu.people.ust.hk/">Hongbo Fu</a>
+                <br>
+                <em>In Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems <b style="color: red;">(CHI 2023)</b></em>
+                <br>
+                <a href="paper/ProObjAR.pdf">[paper]</a>
+                |
+                <a href="https://www.youtube.com/watch?v=YnkOdbIkooc">[video]</a>
+              </td>
+            </tr>
 
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one" style="width:110%; height:auto;">
-          <img src='images/Flower Text Entry.jpg' width=100%>
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
-        <a href="https://ieeexplore.ieee.org/document/9874256">
-          <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Efficient Flower Text Entry in Virtual Reality</span>
-        </a>
-        <br>
-    <strong style="font-size: 17px;">Jiaye Leng</strong>,
-    <a href="https://liliwang.net/">Lili Wang</a>,
-    Xiaolong Liu,
-    Xuehuai Shi,
-    <a href="http://miaowang.me/">Miao Wang</a>
-        <br>
-        <em>In IEEE Transactions on Visualization and Computer Graphics <b style="color: red;">(TVCG 2022)</b></em>
-        <br>
-        <a href="paper/Efficient_Flower_Text_Entry_in_Virtual_Reality.pdf">[paper]</a>
-        |
-        <a href="https://www.youtube.com/watch?v=-QW9f8Q-sPQ&t=4s">[video]</a>
-      </td>
-    </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one" style="width:110%; height:auto;">
+                  <img src='images/Flower Text Entry.jpg' width=100%>
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
+                <a href="https://ieeexplore.ieee.org/document/9874256">
+                  <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Efficient Flower Text Entry in Virtual Reality</span>
+                </a>
+                <br>
+            <strong style="font-size: 17px;">Jiaye Leng</strong>,
+            <a href="https://liliwang.net/">Lili Wang</a>,
+            Xiaolong Liu,
+            Xuehuai Shi,
+            <a href="http://miaowang.me/">Miao Wang</a>
+                <br>
+                <em>In IEEE Transactions on Visualization and Computer Graphics <b style="color: red;">(TVCG 2022)</b></em>
+                <br>
+                <a href="paper/Efficient_Flower_Text_Entry_in_Virtual_Reality.pdf">[paper]</a>
+                |
+                <a href="https://www.youtube.com/watch?v=-QW9f8Q-sPQ&t=4s">[video]</a>
+              </td>
+            </tr>
 
-    <tr>
-      <td style="padding:20px;width:25%;vertical-align:middle">
-        <div class="one" style="width:110%; height:auto;">
-          <img src='images/Bidirectional.png' width=100%>
-        </div>
-      </td>
-      <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
-        <a href="https://ieeexplore.ieee.org/abstract/document/9417794">
-          <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Bidirectional shadow rendering for interactive mixed 360° videos</span>
-        </a>
-        <br>
-    <a href="https://liliwang.net/">Lili Wang</a>,
-    Hao Wang,
-    Danqing Dai,
-    <strong style="font-size: 17px;">Jiaye Leng</strong>,
-    <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han</a>
-        <br>
-        <em>In 2021 IEEE Virtual Reality and 3D User Interfaces <b style="color: red;">(VR 2021)</b></em>
-        <br>
-        <a href="paper/Bidirectional_Shadow_Rendering_for_Interactive_Mixed_360_Videos.pdf">[paper]</a>
-        |
-        <a href="">[video]</a>
-      </td>
-    </tr>
+            <tr>
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one" style="width:110%; height:auto;">
+                  <img src='images/Bidirectional.png' width=100%>
+                </div>
+              </td>
+              <td style="padding:20px;width:75%;vertical-align:middle;line-height:1.5">
+                <a href="https://ieeexplore.ieee.org/abstract/document/9417794">
+                  <span class="papertitle" style="font-size: 17px; text-decoration: underline;">Bidirectional shadow rendering for interactive mixed 360° videos</span>
+                </a>
+                <br>
+            <a href="https://liliwang.net/">Lili Wang</a>,
+            Hao Wang,
+            Danqing Dai,
+            <strong style="font-size: 17px;">Jiaye Leng</strong>,
+            <a href="https://gaplab.cuhk.edu.cn/pages/people">Xiaoguang Han</a>
+                <br>
+                <em>In 2021 IEEE Virtual Reality and 3D User Interfaces <b style="color: red;">(VR 2021)</b></em>
+                <br>
+                <a href="paper/Bidirectional_Shadow_Rendering_for_Interactive_Mixed_360_Videos.pdf">[paper]</a>
+                |
+                <a href="">[video]</a>
+              </td>
+            </tr>
+          </tbody></table>
 
-  </tbody></table>
 
-
-    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr>
-        <td style="padding:0px">
-          <br>
-          <p style="text-align:center;font-size:small;">
-            Website template from <a href="https://github.com/jonbarron/website">Jon Barron</a>
-          </p>
-        </td>
-      </tr>
-    </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:center;font-size:small;">
+                  Website template from <a href="https://github.com/jonbarron/website">Jon Barron</a>
+                </p>
+              </td>
+            </tr>
+          </tbody></table>
     
         </td>
       </tr>
