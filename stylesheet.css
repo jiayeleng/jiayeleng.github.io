@@ -102,6 +102,17 @@ h2 {
   font-weight: 700;
 }
 
+a .papertitle {
+  color: #000000 !important;
+  text-decoration: none;
+}
+
+a:hover .papertitle,
+a:focus .papertitle {
+  color: #666666 !important;
+  text-decoration: none;
+}
+
 .name {
   padding-top: 20px;
   margin: 0;
