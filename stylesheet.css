@@ -81,26 +81,26 @@ th,
 tr,
 p,
 a {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
   font-size: 14px;
 }
 
 strong {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
   font-size: 14px;
 }
 
 h2 {
   margin: 0;
   font-weight: normal;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
   font-size: 22px;
 }
 
 .papertitle {
   font-family: 'Caveat', 'Comic Sans MS', cursive;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 a .papertitle {
