@@ -81,24 +81,24 @@ th,
 tr,
 p,
 a {
-  font-family: 'Lobster', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
 }
 
 strong {
-  font-family: 'Lobster', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
 }
 
 h2 {
   margin: 0;
   font-weight: normal;
-  font-family: 'Lobster', cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 22px;
 }
 
 .papertitle {
-  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 14px;
   font-weight: 600;
 }
@@ -117,7 +117,7 @@ a:focus .papertitle {
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: 'Caveat', 'Comic Sans MS', cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 32px;
 }
 
