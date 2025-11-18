@@ -64,14 +64,15 @@
 }
 
 a {
-  color: #4487cb;
+  color: #2d78c3;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
-  color: #eda14a;
-  text-decoration: none;
+  /* color: #eda14a; */
+  text-decoration: underline;
+  text-decoration-color: #FFB7B7;
 }
 
 body,
