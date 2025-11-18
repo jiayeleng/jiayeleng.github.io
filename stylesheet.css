@@ -98,9 +98,9 @@ h2 {
 }
 
 .papertitle {
-  font-family: "Comic Sans MS", cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 a .papertitle {
@@ -117,7 +117,7 @@ a:focus .papertitle {
 .name {
   padding-top: 20px;
   margin: 0;
-  font-family: "Comic Sans MS", cursive;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
 }
 
