@@ -75,28 +75,30 @@ a:hover {
   text-decoration-color: #FFB7B7;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 body,
 td,
 th,
 tr,
 p,
 a {
-  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 14px;
 }
 
 strong {
-  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 14px;
 }
 
 h2 {
   margin: 0;
   font-weight: normal;
-  font-family: 'Pacifico', 'Patrick Hand', 'Comic Neue', cursive;
+  font-family: 'Lobster', cursive;
   font-size: 22px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
 .papertitle {
   font-family: 'Caveat', 'Comic Sans MS', cursive;
   font-size: 14px;
