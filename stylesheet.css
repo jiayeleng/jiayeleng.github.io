@@ -110,7 +110,7 @@ a .papertitle {
 
 a:hover .papertitle,
 a:focus .papertitle {
-  color: #666666 !important;
+  /* color: #666666 !important; */
   text-decoration: none;
 }
 
